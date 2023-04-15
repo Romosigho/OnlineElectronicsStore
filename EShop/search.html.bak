@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Online Electronics Store</title>
+	<link rel="stylesheet" href="./style.css">
+  </head>
+  <body>
+    
+	<br>
+    <h1>Online Electronics Store</h1> 
+    <br>
+	<hr>
+	<br>
+	  <div>
+     <div class="wave"></div>
+     <div class="wave"></div>
+     <div class="wave"></div>
+  </div>
+  <form class="form-inline" method="post" action="search.jsp">
+    <input type="text" name="name" class="form-control" placeholder="Product name">
+	<input type="text" name="category" class="form-control" placeholder="Product category">
+	<input type="text" name="manufacturer" class="form-control" placeholder="Product manufacturer">
+    <button type="submit" name="save" class="btn btn-primary">Search</button>
+  </form>
+  
+  
+    </body>
+</html>
