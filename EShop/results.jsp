@@ -37,6 +37,7 @@
 <td>Name</td>
 <td>Category</td>
 <td>Manufacturer</td>
+<td>Quantity</td>
 
 </tr>
 
@@ -52,6 +53,7 @@ while(resultSet.next()){
 <td><%=resultSet.getString("name") %></td>
 <td><%=resultSet.getString("category") %></td>
 <td><%=resultSet.getString("manufacturer") %></td>
+<td><%=resultSet.getString("quantity") %></td>
 </tr>
 <%
 }

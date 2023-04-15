@@ -37,6 +37,7 @@
 <td>Name</td>
 <td>Category</td>
 <td>Manufacturer</td>
+<td>Quantity</td>
 
 </tr>
 
@@ -60,9 +61,20 @@ connection.close();
 e.printStackTrace();
 }
 %>
-<hr>
+<div class="parent_div">
 <a href="tasks.html"> <button class="button-m" role="button">Go Back</button></a>
-<hr>
+<div class="parent_div">
   </body>
+  
+  <style>
+  .parent_div {
+position: absolute;
+bottom: 5px;
+width: 100%;
+}
+.parent_div input {
+margin: 0 auto;
+}
+</style>
   
   </html>
