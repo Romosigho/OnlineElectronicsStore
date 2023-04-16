@@ -7,8 +7,9 @@
   <%@page import="java.sql.ResultSet"%>
   <%@page import="java.sql.Statement"%>
   <%@page import="java.sql.Connection"%>
+  <%@page import="java.sql.PreparedStatement"%>
     <meta charset="UTF-8">
-    <title>Online Electronics Store</title>
+    <title>Online Electronics Store - Admin</title>
 	<link rel="stylesheet" href="./style.css">
   </head>
   <body>
@@ -18,9 +19,9 @@
     String database = "estore";
     String userid = "root";
     String password = "root";
-    String name=request.getParameter("name");
-	String category=request.getParameter("category");
-	String manufacturer=request.getParameter("manufacturer");
+    int ID = Integer.parseInt(request.getParameter("ID"));
+	int quantity = Integer.parseInt(request.getParameter("quantity"));
+	
     try
     {
         Class.forName("com.mysql.cj.jdbc.Driver");
@@ -28,36 +29,21 @@
       e.printStackTrace();
     }
 	Connection connection = null;
-    Statement statement = null;
     ResultSet resultSet = null;
   %> 
-<h1>Search Results</h1>
-<table border="1">
-<tr>
-<td>Name</td>
-<td>Category</td>
-<td>Manufacturer</td>
-<td>In Stock</td>
-<td>Image</td>
 
-</tr>
+<div class=".center">
+<h4>Inventory Update Successful</h4>
+</div class=".center">
 
 <%
 try{
 connection = DriverManager.getConnection(connectionUrl+database, userid, password);
-statement=connection.createStatement();
-String sql ="select * from products WHERE name='"+name+"' OR category='"+category+"' OR manufacturer ='"+manufacturer+"'";
-resultSet = statement.executeQuery(sql);
-while(resultSet.next()){
-%>
-<tr>
-<td><%=resultSet.getString("name") %></td>
-<td><%=resultSet.getString("category") %></td>
-<td><%=resultSet.getString("manufacturer") %></td>
-<td><%=resultSet.getString("quantity") %></td>
-<td><%=resultSet.getString("image") %></td>
-</tr>
-<%
+String sql = "update products set quantity ='"+quantity+"' where ID ='"+ID+"'";
+PreparedStatement ps = connection.prepareStatement(sql);
+int res = ps.executeUpdate();
+if(res != 0){
+
 }
 connection.close();
 } catch (Exception e) {
@@ -65,7 +51,7 @@ e.printStackTrace();
 }
 %>
 <div class="parent_div">
-<a href="tasks.html"> <button class="button-m" role="button">Go Back</button></a>
+<a href="adminprod.jsp"> <button class="button-m" role="button">Go Back</button></a>
 <div class="parent_div">
   </body>
   
@@ -77,6 +63,15 @@ width: 100%;
 }
 .parent_div input {
 margin: 0 auto;
+}
+</style>
+
+<style>
+.center {
+  margin: auto;
+  width: 50%;
+  border: 3px solid green;
+  padding: 10px;
 }
 </style>
   

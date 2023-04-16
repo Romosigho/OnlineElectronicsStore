@@ -23,7 +23,7 @@ public class Signup extends ActionSupport {
 	}
 	
 	public String processSignup() throws Exception {
-		String result = "";
+		String result = "signup";
 		
 		try {
 		

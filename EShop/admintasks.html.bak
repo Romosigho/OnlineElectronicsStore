@@ -25,7 +25,7 @@
 <a href="adminsearch.html"> <button class="button-m" role="button">Manage Inventory</button></a>
 <p>
 <p>
-<a href="admincust.jsp"> <button class="button-m" role="button">View Customers</button></a>
+<a href="admincust.html"> <button class="button-m" role="button">View Customers</button></a>
 <p>
 <p>
 <a href="admintrans.html"> <button class="button-m" role="button">View Transactions</button></a>

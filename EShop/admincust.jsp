@@ -8,7 +8,7 @@
   <%@page import="java.sql.Statement"%>
   <%@page import="java.sql.Connection"%>
     <meta charset="UTF-8">
-    <title>Online Electronics Store</title>
+    <title>Online Electronics Store - Admin</title>
 	<link rel="stylesheet" href="./style.css">
   </head>
   <body>
@@ -18,9 +18,7 @@
     String database = "estore";
     String userid = "root";
     String password = "root";
-    String name=request.getParameter("name");
-	String category=request.getParameter("category");
-	String manufacturer=request.getParameter("manufacturer");
+ 
     try
     {
         Class.forName("com.mysql.cj.jdbc.Driver");
@@ -31,14 +29,14 @@
     Statement statement = null;
     ResultSet resultSet = null;
   %> 
-<h1>Search Results</h1>
+<h1>Customer Search Results</h1>
 <table border="1">
 <tr>
-<td>Name</td>
-<td>Category</td>
-<td>Manufacturer</td>
-<td>In Stock</td>
-<td>Image</td>
+<td>ID</td>
+<td>Username</td>
+<td>Password</td>
+<td>Shipping</td>
+<td>Payment Method</td>
 
 </tr>
 
@@ -46,16 +44,16 @@
 try{
 connection = DriverManager.getConnection(connectionUrl+database, userid, password);
 statement=connection.createStatement();
-String sql ="select * from products WHERE name='"+name+"' OR category='"+category+"' OR manufacturer ='"+manufacturer+"'";
+String sql ="select * from user";
 resultSet = statement.executeQuery(sql);
 while(resultSet.next()){
 %>
 <tr>
-<td><%=resultSet.getString("name") %></td>
-<td><%=resultSet.getString("category") %></td>
-<td><%=resultSet.getString("manufacturer") %></td>
-<td><%=resultSet.getString("quantity") %></td>
-<td><%=resultSet.getString("image") %></td>
+<td><%=resultSet.getString("ID") %></td>
+<td><%=resultSet.getString("username") %></td>
+<td><%=resultSet.getString("password") %></td>
+<td><%=resultSet.getString("shipping") %></td>
+<td><%=resultSet.getString("paymethod") %></td>
 </tr>
 <%
 }
@@ -65,7 +63,7 @@ e.printStackTrace();
 }
 %>
 <div class="parent_div">
-<a href="tasks.html"> <button class="button-m" role="button">Go Back</button></a>
+<a href="admintasks.html"> <button class="button-m" role="button">Go Back</button></a>
 <div class="parent_div">
   </body>
   

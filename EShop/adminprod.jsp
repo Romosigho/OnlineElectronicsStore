@@ -8,7 +8,7 @@
   <%@page import="java.sql.Statement"%>
   <%@page import="java.sql.Connection"%>
     <meta charset="UTF-8">
-    <title>Online Electronics Store</title>
+    <title>Online Electronics Store - Admin</title>
 	<link rel="stylesheet" href="./style.css">
   </head>
   <body>
@@ -18,9 +18,7 @@
     String database = "estore";
     String userid = "root";
     String password = "root";
-    String name=request.getParameter("name");
-	String category=request.getParameter("category");
-	String manufacturer=request.getParameter("manufacturer");
+	
     try
     {
         Class.forName("com.mysql.cj.jdbc.Driver");
@@ -34,10 +32,11 @@
 <h1>Search Results</h1>
 <table border="1">
 <tr>
+<td>ID</td>
 <td>Name</td>
 <td>Category</td>
 <td>Manufacturer</td>
-<td>In Stock</td>
+<td>Quantity</td>
 <td>Image</td>
 
 </tr>
@@ -46,11 +45,12 @@
 try{
 connection = DriverManager.getConnection(connectionUrl+database, userid, password);
 statement=connection.createStatement();
-String sql ="select * from products WHERE name='"+name+"' OR category='"+category+"' OR manufacturer ='"+manufacturer+"'";
+String sql ="select * from products";
 resultSet = statement.executeQuery(sql);
 while(resultSet.next()){
 %>
 <tr>
+<td><%=resultSet.getString("ID") %></td>
 <td><%=resultSet.getString("name") %></td>
 <td><%=resultSet.getString("category") %></td>
 <td><%=resultSet.getString("manufacturer") %></td>
@@ -64,8 +64,17 @@ connection.close();
 e.printStackTrace();
 }
 %>
+
+<h4>Modify Product Inventory</h4>
+  <form class="form-inline" method="post" action="adminupdate.jsp">
+  <input type="text" name="ID" class="form-control" placeholder="Product ID">
+  <input type="text" name="quantity" class="form-control" placeholder="Update product quantity">
+    <button type="submit" name="save" class="btn btn-primary">Update</button>
+  </form>
+ <br>
+<p> 
 <div class="parent_div">
-<a href="tasks.html"> <button class="button-m" role="button">Go Back</button></a>
+<a href="adminsearch.html"> <button class="button-m" role="button">Go Back</button></a>
 <div class="parent_div">
   </body>
   

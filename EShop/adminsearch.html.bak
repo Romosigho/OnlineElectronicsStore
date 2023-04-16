@@ -33,6 +33,13 @@
     <button type="submit" name="save" class="btn btn-primary">View All</button>
   </form>
   <hr>
+  <h4>Modify Product Inventory</h4>
+  <form class="form-inline" method="post" action="adminquantity.jsp">
+  <input type="text" name="ID" class="form-control" placeholder="Product ID">
+  <input type="text" name="quantity" class="form-control" placeholder="Update product quantity">
+    <button type="submit" name="save" class="btn btn-primary">View All</button>
+  </form>
+  <hr>
   <div class="parent_div">
 <a href="admintasks.html"> <button class="button-m" role="button">Go Back</button></a>
 <div class="parent_div">
