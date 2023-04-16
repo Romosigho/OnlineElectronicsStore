@@ -8,7 +8,7 @@
   <%@page import="java.sql.Statement"%>
   <%@page import="java.sql.Connection"%>
     <meta charset="UTF-8">
-    <title>Online Electronics Store</title>
+    <title>Online Electronics Store - Admin</title>
 	<link rel="stylesheet" href="./style.css">
   </head>
   <body>
@@ -65,7 +65,7 @@ e.printStackTrace();
 }
 %>
 <div class="parent_div">
-<a href="tasks.html"> <button class="button-m" role="button">Go Back</button></a>
+<a href="admintasks.html"> <button class="button-m" role="button">Go Back</button></a>
 <div class="parent_div">
   </body>
   

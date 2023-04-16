@@ -19,6 +19,13 @@
 		<result name = "tasks">/tasks.html</result>
 	</action>
 	
+	<action name="ADloginAction" class = "p.Admin" method ="processADLogin">
+		<result>admintasks.html</result>
+		<result>admin.jsp</result>
+		<result name = "adlogin">/admin.jsp</result>
+		<result name = "adtasks">/admintasks.html</result>
+	</action>
+	
 	<!-- Task action !-->
 	
 	</package>

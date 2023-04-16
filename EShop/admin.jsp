@@ -4,19 +4,17 @@
 <html>
   <head>
     <meta http-equiv="contentType" content="text/html"; charset="UTF-8">
-    <title>Online Electronics Store</title>
+    <title>Online Electronics Store - Admin</title>
 	<link rel="stylesheet" href="./style.css">
   </head>
 <body>
 <br>
-<h1>Login as Existing User</h1>
+<h1>Login as Admin</h1>
 <br>
 <hr>
-<s:form action="loginAction">  
+<s:form action="ADloginAction">  
 <s:textfield name="username" label="Username"></s:textfield>  
-<s:password name="password" label="Password"></s:password>
-<s:textfield name="shipping" label="Shipping Address"></s:textfield>
-<s:textfield name="paymethod" label="Payment Method"></s:textfield>   
+<s:password name="password" label="Password"></s:password>   
   
 <s:submit value="Login"></s:submit>  
   
@@ -24,7 +22,7 @@
 <hr>
 
 <div class="parent_div">
-<a href="admin.jsp"> <button class="button-m" role="button">Login as Admin</button></a>
+<a href="index.html"> <button class="button-m" role="button">Go Back</button></a>
 <div class="parent_div">
   </body>
   

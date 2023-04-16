@@ -23,7 +23,7 @@ public class Login extends ActionSupport {
 	}
 	
 	public String processLogin() throws Exception {
-		String result = "";
+		String result = "login";
 		
 			try {
 			//check database
